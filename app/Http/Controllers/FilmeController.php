@@ -2,13 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Filme;
-use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class FilmeController extends Controller
 {
     public function getAllMovies()
     {
-        return Filme::all();
+        return DB::table('tbfilme')
+            ->join('tbFilmeGenero', 'tbFilmeGenero.idFilme', '=', 'tbfilme.idFilme')
+            ->join('tbgenero', 'tbgenero.idGenero', '=', 'tbFilmeGenero.idGenero')
+            ->get();
     }
 }

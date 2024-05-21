@@ -2,9 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class GeneroController extends Controller
 {
-    //
+    public function getAllGenres()
+    {
+        return DB::table('tbgenero')
+            ->get();
+    }
 }
