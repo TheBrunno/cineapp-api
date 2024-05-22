@@ -5,7 +5,14 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\FilmeController;
 use App\Http\Controllers\GeneroController;
+use App\Http\Controllers\TagController;
 
+Route::get('/filmes', [FilmeController::class, 'getOnlyMovies']);
+Route::get('/filmes/all', [FilmeController::class, 'getAllMoviesAndInfos']);
+Route::get('/filmes/search="{name}"', [FilmeController::class, 'getMoviesByName']);
 
-Route::get('/filmes', [FilmeController::class, 'getAllMovies']);
-Route::get('/generos', [GeneroController::class, 'getAllGenres']);
+Route::get('/generos', [GeneroController::class, 'getOnlyGenres']);
+Route::get('/generos/{genres}/filmes', [GeneroController::class, 'getMoviesByGenre']);
+
+Route::get('/tags', [TagController::class, 'getOnlyTags']);
+Route::get('/tags/{tags}/filmes', [TagController::class, 'getMoviesByTag']);

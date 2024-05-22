@@ -4,15 +4,15 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\DB;
 
-class GeneroController extends Controller
+class TagController extends Controller
 {
-    public function getOnlyGenres()
+    public function getOnlyTags()
     {
-        return DB::table('tbgenero')
+        return DB::table('tbtag')
             ->get();
     }
 
-    public function getMoviesByGenre($genre)
+    public function getMoviesByTag($tag)
     {
         $resultados = DB::select('
             SELECT
@@ -31,7 +31,7 @@ class GeneroController extends Controller
             LEFT JOIN tbFilmeTag ON tbFilmeTag.idFilme = tbfilme.idFilme
             LEFT JOIN tbTag ON tbTag.idTag = tbFilmeTag.idTag
             GROUP BY tbfilme.idFilme
-            HAVING generos LIKE \'%'.$genre.'%\'
+            HAVING tags LIKE \'%'.$tag.'%\'
         ');
 
         foreach ($resultados as $resultado) {
@@ -45,4 +45,5 @@ class GeneroController extends Controller
 
         return $resultados;
     }
+
 }

@@ -15,7 +15,7 @@ class Filme extends Model
      */
     protected $table = 'tbfilme';
 
-    protected $fillable = ['filme','duracao','diretor', 'img', 'idGenero'];
+    protected $fillable = ['filme','duracao','diretor', 'img'];
 
     use HasFactory;
 }
