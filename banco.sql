@@ -47,3 +47,11 @@ INSERT INTO tbFilmeTag(idFilme, idTag) VALUES (3, 1), (3, 4);
 INSERT INTO tbFilmeGenero(idFilme, idGenero) VALUES (1, 3), (1, 2);
 INSERT INTO tbFilmeGenero(idFilme, idGenero) VALUES (2, 1), (2, 2);
 INSERT INTO tbFilmeGenero(idFilme, idGenero) VALUES (3, 1), (3, 2);
+INSERT INTO tbusuarios(nome, img, email, senha, cpf, cartao, bandeira) VALUES
+    ("Eduardo Li Chen", "../../assets/marinkitagawa.png", "nikollyfreitas@decifra.me", "1234", "000.000.000-00", "1233-1231-2131-1321", "Visa")
+    ,("Kaua de Souza", "../../assets/gargantula.png", "souzasantosk@decifra.me", "1234", "000.000.000-00", "1233-1231-2131-1321", "Mastercard")
+    ,("Bruno Oliveira", "../../assets/scarlet.png", "brunao@decifra.me", "1234", "000.000.000-00", "1233-1231-2131-1321", "Maestro")
+
+INSERT INTO tbFavoritos (idUsuario, idFilme) VALUES (1, 1);
+INSERT INTO tbFavoritos (idUsuario, idFilme) VALUES (1, 2);
+INSERT INTO tbFavoritos (idUsuario, idFilme) VALUES (1, 3);
