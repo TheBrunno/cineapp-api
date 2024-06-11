@@ -2,10 +2,22 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Genero;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 class GeneroController extends Controller
 {
+
+    public function createGenres(Request $request){
+        $genrer = new Genero();
+
+
+        $genrer->genero = $request->genero;
+
+        $genrer->save();
+    }
+
     public function getOnlyGenres()
     {
         return DB::table('tbgenero')

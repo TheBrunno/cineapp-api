@@ -17,5 +17,7 @@ class Genero extends Model
 
     protected $fillable = ['genero'];
 
+    public $timestamps = false;
+    
     use HasFactory;
 }
